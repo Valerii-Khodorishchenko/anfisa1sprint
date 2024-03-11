@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ ice_cream.title }}{% endblock %}
+{% block content %}
+  <h1 class="pb-2 mb-0">{{ ice_cream.title }}</h1>  
+  <div class="row mt-3">
+    <div class="col-12 col-md-6">
+      <h2>Описание</h2>
+      <p>{{ ice_cream.description }}</p>      
+    </div> 
+    <div class="col-12 col-md-6 mb-3">
+      <img 
+        class="img-fluid"
+        style="width: 400px; height: 300px;" 
+        {% comment %} height="400" width="300" {% endcomment %}
+        src="{% static ice_cream.img_path %}"
+        >      
+    </div>
+  </div>     
+{% endblock content %}
